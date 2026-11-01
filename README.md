@@ -1,6 +1,6 @@
-# Swipeout
+# Swipeout - Windows Swipe to Clean Your Storage
 
-Windows Swipe Storage Cleaner. Swipe Cleaner for iPhone, ported to the Windows PC: free, open source, no subscription, runs locally.
+Swipe Cleaner for iPhone, ported to the Windows PC: free, open source, no subscription, runs locally.
 
 ![Swipeout demo: binning and keeping files with the arrow keys](docs/swipeout-demo.gif)
 
