@@ -1,4 +1,4 @@
-"""Declutter - local server. Run: python server.py"""
+"""Swipeout - local server. Run: python server.py"""
 import ctypes
 import heapq
 import json
@@ -22,7 +22,7 @@ try:
 except ImportError:  # pywin32 missing: PC-only mode
     phone = None
 
-PORT = int(os.environ.get("DECLUTTER_PORT", "8765"))
+PORT = int(os.environ.get("SWIPEOUT_PORT", "8765"))
 STATIC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")
 HOME = os.path.expanduser("~")
 TOP_FILES = 500
@@ -412,7 +412,7 @@ class Handler(BaseHTTPRequestHandler):
         return self._static(route)
 
     def do_POST(self):
-        if not self._host_ok() or self.headers.get("X-Declutter") != "1":
+        if not self._host_ok() or self.headers.get("X-Swipeout") != "1":
             return self._json({"error": "forbidden"}, 403)
         route = urlparse(self.path).path
         data = self._body()
@@ -569,7 +569,7 @@ def main():
     server = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
     server.daemon_threads = True
     url = f"http://127.0.0.1:{PORT}/"
-    print(f"Declutter running at {url}  (Ctrl+C to stop)")
+    print(f"Swipeout running at {url}  (Ctrl+C to stop)")
     if "--no-browser" not in sys.argv:
         threading.Timer(0.6, lambda: webbrowser.open(url)).start()
     try:

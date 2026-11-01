@@ -1,4 +1,4 @@
 # Optional — only needed for Android phone (MTP) support.
-# Without these, Declutter still works fully for local drives.
+# Without these, Swipeout still works fully for local drives.
 pywin32>=306      # phone browsing/scanning/deletes via the Windows Shell
 comtypes>=1.4     # much faster phone scanning via the WPD API; falls back to Shell without it

@@ -1,16 +1,16 @@
-# Declutter
+# Swipeout
 
 **Windows Swipe Storage Cleaner**
 
 Swipe Cleaner for iPhone, but for your Windows PC — and free, open source, no subscription, no tracking, runs 100% locally.
 
-![Declutter home](docs/screenshot-home.png)
+![Swipeout home](docs/screenshot-home.png)
 
 ## Why
 
-Windows Explorer won't tell you how big a folder is. So the 40 GB eating your disk hides three levels deep while you guess. Declutter weighs everything — folders included — lines it up biggest first, and lets you judge it one item at a time: left to bin, right to keep, like a dating app for your own files.
+Windows Explorer won't tell you how big a folder is. So the 40 GB eating your disk hides three levels deep while you guess. Swipeout weighs everything — folders included — lines it up biggest first, and lets you judge it one item at a time: left to bin, right to keep, like a dating app for your own files.
 
-![Declutter triage view](docs/screenshot-triage.png)
+![Swipeout triage view](docs/screenshot-triage.png)
 
 ## Features
 
@@ -45,19 +45,19 @@ Windows Explorer won't tell you how big a folder is. So the 40 GB eating your di
 Requires **Windows** and **Python 3** (tested on 3.13).
 
 ```sh
-git clone https://github.com/smaffan21/declutter.git
-cd declutter
+git clone https://github.com/smaffan21/swipeout.git
+cd swipeout
 pip install -r requirements.txt   # optional — only for phone support
 python server.py
 ```
 
-Or just double-click `Declutter.bat`. Your browser opens to http://127.0.0.1:8765 — pick a folder or drive and start swiping.
+Or just double-click `Swipeout.bat`. Your browser opens to http://127.0.0.1:8765 — pick a folder or drive and start swiping.
 
-Change the port with `DECLUTTER_PORT=9000 python server.py`.
+Change the port with `SWIPEOUT_PORT=9000 python server.py`.
 
 ## Phones over USB
 
-Declutter can triage an Android phone plugged in over USB:
+Swipeout can triage an Android phone plugged in over USB:
 
 1. Unlock the phone and set the USB connection to **File Transfer / MTP**.
 2. It shows up in the app next to your drives. Scan and swipe like any other folder.
@@ -65,7 +65,7 @@ Declutter can triage an Android phone plugged in over USB:
 Two honest warnings:
 
 - **Phone deletes are permanent.** There is no Recycle Bin over MTP. `Z` still cancels a delete during the 4-second countdown, but once it fires the file is gone.
-- **Samsung Secure Folder and app-private data aren't reachable over USB.** That's Android's sandbox doing its job, not a bug. Declutter shows exactly what Windows can see.
+- **Samsung Secure Folder and app-private data aren't reachable over USB.** That's Android's sandbox doing its job, not a bug. Swipeout shows exactly what Windows can see.
 
 ## Safety and privacy
 

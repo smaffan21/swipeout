@@ -13,7 +13,7 @@ const S = {
   sel: 0,
   showKept: false,
   pending: new Map(),          // key -> {item, timer}
-  kept: new Set(JSON.parse(localStorage.getItem("declutter.kept") || "[]")),
+  kept: new Set(JSON.parse(localStorage.getItem("swipeout.kept") || "[]")),
   undo: [],
   freed: { pc: 0, phone: 0 },
   polling: null,
@@ -39,7 +39,7 @@ const fmtDate = (t) => t ? new Date(t * 1000).toLocaleDateString(undefined, { ye
 const ext = (it) => it.isDir ? "" : it.ext || "";
 
 async function api(path, body) {
-  const opts = body === undefined ? {} : { method: "POST", headers: { "Content-Type": "application/json", "X-Declutter": "1" }, body: JSON.stringify(body) };
+  const opts = body === undefined ? {} : { method: "POST", headers: { "Content-Type": "application/json", "X-Swipeout": "1" }, body: JSON.stringify(body) };
   const res = await fetch(path, opts);
   const data = await res.json().catch(() => ({}));
   if (!res.ok) throw new Error(data.error || res.statusText);
@@ -215,7 +215,7 @@ function current() {
 }
 
 function persistKept() {
-  localStorage.setItem("declutter.kept", JSON.stringify([...S.kept]));
+  localStorage.setItem("swipeout.kept", JSON.stringify([...S.kept]));
 }
 
 /* ---------------- render ---------------- */

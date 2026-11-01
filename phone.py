@@ -16,7 +16,7 @@ except Exception:  # noqa: BLE001 - comtypes missing or WPD unavailable: Shell-o
 
 PREFIX = "mtp:"
 THIS_PC = 17
-PREVIEW_DIR = os.path.join(tempfile.gettempdir(), "declutter-preview")
+PREVIEW_DIR = os.path.join(tempfile.gettempdir(), "swipeout-preview")
 
 
 def is_phone(path):
