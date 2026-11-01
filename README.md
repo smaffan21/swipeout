@@ -6,8 +6,6 @@ Windows Swipe Storage Cleaner. Swipe Cleaner for iPhone, ported to the Windows P
 
 Windows Explorer shows folder sizes as blank, so the folder eating 40 GB can sit three levels deep while you guess. Swipeout weighs every folder recursively, lists the contents biggest first and shows them one at a time with a preview. Press left to send the item to the Recycle Bin or right to keep it.
 
-![Swipeout triage view](docs/screenshot-triage.png)
-
 ## Features
 
 - Recursive folder sizes, sorted biggest first, with counts updating live during the scan
