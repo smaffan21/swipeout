@@ -1,0 +1,11 @@
+{
+  "name": "swipeout",
+  "private": true,
+  "description": "Dev tooling for the demo recorder in scripts/. The app itself is pure Python stdlib.",
+  "scripts": {
+    "record-demo": "node scripts/record-demo.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.64.1"
+  }
+}
