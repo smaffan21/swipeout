@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Declutter — Windows Swipe Storage Cleaner</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header class="top">
+  <div class="mark" title="Back to start" id="homeBtn">DECLUTTER<span>/</span></div>
+  <div class="drives" id="drives"></div>
+  <div class="bin" id="binBox">
+    <div class="bin-text">
+      <div class="label">Recycle Bin</div>
+      <div class="value" id="binSize">—</div>
+    </div>
+    <button class="ghost" id="emptyBin" title="Space is only freed once the Recycle Bin is emptied">Empty bin</button>
+  </div>
+</header>
+
+<!-- START -->
+<main id="start" class="start">
+  <h1>What's eating<br>your disk<em>?</em></h1>
+  <p class="lede">Pick a place. Everything inside gets weighed — folders included — and lined up biggest first. Then you judge it, one item at a time.</p>
+  <form id="pathForm" class="pathform">
+    <input id="pathInput" spellcheck="false" autocomplete="off" placeholder="C:\Users\you\Downloads">
+    <button type="submit" class="solid">Weigh it</button>
+  </form>
+  <div class="spots-label">Usual suspects</div>
+  <div class="spots" id="spots"></div>
+  <div class="spots-label">Whole drives <span class="dim">(slower)</span></div>
+  <div class="spots" id="driveSpots"></div>
+  <div id="phoneSection" class="phone-section hidden"></div>
+</main>
+
+<!-- SCANNING -->
+<div id="scanning" class="scanning hidden">
+  <div class="scan-inner">
+    <div class="scan-label">Weighing</div>
+    <div class="scan-root" id="scanRoot"></div>
+    <div class="scan-bytes" id="scanBytes">0 B</div>
+    <div class="scan-files" id="scanFiles">0 files</div>
+    <div class="scan-current" id="scanCurrent"></div>
+    <button class="ghost" id="cancelScan">Cancel <kbd>Esc</kbd></button>
+  </div>
+</div>
+
+<!-- WORK -->
+<main id="work" class="work hidden">
+  <section class="ledger">
+    <div class="crumbs" id="crumbs"></div>
+    <div class="ledger-head">
+      <div>
+        <div class="total" id="total"></div>
+        <div class="sub" id="totalSub"></div>
+      </div>
+      <div class="modes" role="tablist">
+        <button data-mode="children" class="mode on">In this folder</button>
+        <button data-mode="topFiles" class="mode">Biggest files inside</button>
+      </div>
+    </div>
+    <div class="ledger-tools">
+      <label><input type="checkbox" id="showKept"> show kept</label>
+      <span class="dim" id="remaining"></span>
+    </div>
+    <ol class="rows" id="rows"></ol>
+  </section>
+
+  <section class="stage">
+    <div class="freed">
+      <span class="label">Freed this session</span>
+      <span class="value" id="freed">0 B</span>
+    </div>
+    <div class="deck" id="deck"></div>
+    <div class="keys">
+      <button class="key bin-key" id="btnBin"><kbd>&larr;</kbd> Bin</button>
+      <button class="key" id="btnPrev" title="Previous"><kbd>&uarr;</kbd></button>
+      <button class="key" id="btnNext" title="Skip"><kbd>&darr;</kbd></button>
+      <button class="key keep-key" id="btnKeep">Keep <kbd>&rarr;</kbd></button>
+    </div>
+    <div class="minor-keys">
+      <span><kbd>Enter</kbd> open folder</span>
+      <span><kbd>Backspace</kbd> up a level</span>
+      <span><kbd>Z</kbd> undo</span>
+      <span><kbd>Space</kbd> play/pause</span>
+      <span><kbd>E</kbd> show in Explorer</span>
+      <span><kbd>O</kbd> open file</span>
+      <span><kbd>Tab</kbd> switch list</span>
+    </div>
+  </section>
+</main>
+
+<div class="toasts" id="toasts"></div>
+<script src="/app.js"></script>
+</body>
+</html>
